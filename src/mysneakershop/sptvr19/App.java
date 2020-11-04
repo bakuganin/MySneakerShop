@@ -56,14 +56,14 @@ public class App {
         System.out.println(PURPLE + "░▒▓█ " + CYAN + "Магазин Обуви" + PURPLE + " █▓▒░" + RESET);
         boolean cycle = true;
         do{
-            System.out.println(PURPLE+"\n▻ "+CYAN+"Задачи:");
+            System.out.println(PURPLE+"\n▻ "+CYAN+" Задачи:");
             System.out.println(PURPLE+"0"+WHITE+"."+CYAN+" Выход из магазина");
             System.out.println(PURPLE+"1"+WHITE+"."+CYAN+" Добавить товар");
             System.out.println(PURPLE+"2"+WHITE+"."+CYAN+" Список товаров");
             System.out.println(PURPLE+"3"+WHITE+"."+CYAN+" Добавить покупателя");
             System.out.println(PURPLE+"4"+WHITE+"."+CYAN+" Список покупателей");
             System.out.println(PURPLE+"5"+WHITE+"."+CYAN+" Купить товар");
-            System.out.println(PURPLE + "▻ " + CYAN + "Выберите задачу: " + GREEN);
+            System.out.println(PURPLE + "\n▻ " + CYAN + " Выберите задачу: " + GREEN);
             
             String Choose = input.nextLine();
             switch(Choose){
@@ -82,11 +82,12 @@ public class App {
                     break;
                     
                 case "3":
-                    System.out.println("Задача 3");
+                    Consumers personWhoGiveMeMoney = consumerManager.createShopper();
+                    ConsumerManager.addToList(personWhoGiveMeMoney, listConsumer);
                     break;
                     
                 case "4":
-                    System.out.println("Задача 4");
+                    ConsumerManager.getListConsumers(listConsumer);
                     break;
                     
                 case "5":
@@ -94,7 +95,7 @@ public class App {
                     break;
                     
                 default:
-
+                    
                     break;
                 }     
             }while(cycle);

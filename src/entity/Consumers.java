@@ -5,6 +5,7 @@
  */
 package entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -12,16 +13,16 @@ import java.util.Objects;
  * @author user
  */
 
-public class Consumers {
+public class Consumers implements Serializable {
     private String Name;
     private String LastName;
     private String Phone;
-    private Integer Purse;
+    private Double Purse;
 
     public Consumers() {
     }
 
-    public Consumers(String Name, String LastName, String Phone, Integer Purse) {
+    public Consumers(String Name, String LastName, String Phone, Double Purse) {
         this.Name = Name;
         this.LastName = LastName;
         this.Phone = Phone;
@@ -52,11 +53,11 @@ public class Consumers {
         this.Phone = Phone;
     }
 
-    public Integer getPurse() {
+    public Double getPurse() {
         return Purse;
     }
 
-    public void setPurse(Integer Purse) {
+    public void setPurse(Double Purse) {
         this.Purse = Purse;
     }
 

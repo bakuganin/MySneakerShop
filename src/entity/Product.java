@@ -5,23 +5,24 @@
  */
 package entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Jegor Bakunin
  */
-public class Product {
+public class Product implements Serializable{
     private String designation;
-    private String amount;
-    private Integer price;
+    private Integer amount;
+    private Double price;
     private String size;
     private String color;
 
     public Product() {
     }
 
-    public Product(String designation, String amount, Integer price, String size, String color) {
+    public Product(String designation, Integer amount, Double price, String size, String color) {
         this.designation = designation;
         this.amount = amount;
         this.price = price;
@@ -37,19 +38,19 @@ public class Product {
         this.designation = designation;
     }
 
-    public String getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -112,7 +113,13 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "designation=" + designation + ", amount=" + amount + ", price=" + price + ", size=" + size + ", color=" + color + '}';
+        return "Product{" 
+                + "designation=" + designation 
+                + ", amount=" + amount 
+                + ", price=" + price 
+                + ", size=" + size 
+                + ", color=" + color 
+                + '}';
     }
 
     
